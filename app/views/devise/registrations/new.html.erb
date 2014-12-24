@@ -19,6 +19,11 @@
   </div>
 
   <div class="field">
+  <%= f.label :birthday_date %><br />
+  <%= f.date_select :birthday_date, {:start_year => 1920, :end_year => 2005, :order => [:day, :month, :year], :default => DateTime.parse("05/10/1985")} %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

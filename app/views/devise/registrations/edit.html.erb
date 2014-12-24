@@ -18,6 +18,11 @@
     <%= f.email_field :email %>
   </div>
 
+  <div class="field">
+  <%= f.label :birthday_date %><br />
+  <%= f.date_select :birthday_date, {:start_year => 1920, :end_year => 2005, :order => [:day, :month, :year], :default => DateTime.parse("05/10/1985")} %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
